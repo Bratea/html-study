@@ -1,0 +1,68 @@
+<!--
+移动端用的比较多
+定义
+弹性盒子是CSS3的一种新的布局模式
+CSS3 弹性盒是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式引入弹性盒布局模型的
+目的是提供一种更加有效的方式来对一个容器中的子元素进行排列，对齐和分配空白空间    
+内容 
+弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成
+弹性容器通过设置 display 属性的值为 fex 将其定为弹性容器弹性容器内包含了一个或多个弹性子元素
+-->
+<!-- 在外层里加 display开启弹性盒 flex 默认是横向 
+    flex-direction是子元素在父容器的位置 
+        row: 横向从左到右排列 (左对齐)，默认的排列方式
+        row-reverse: 反转横向排列 (右对齐，从后往前排，最后一项排在最前面
+        column: 纵向排列
+        column-reverse: 反转纵向排列，从后往前排，最后一项排在最上面
+    justify-cotent 子元素在父容器的位置  横轴  居上中下摆放 
+    align-items  子元素在父容器的位置 纵轴    居上中下摆放 
+    如果要让子元素在居中位置 及 justify-cotent align-items  参数都为center
+    lfex-grow 作用与子元素 占大盒子的权重 比例 计算的是总盒子数的比例 优先级大于位置
+    -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            flex-grow: calc(2);
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            flex-grow: calc(1);
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color:green;
+            flex-grow: calc(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

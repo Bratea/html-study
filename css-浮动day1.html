@@ -1,0 +1,82 @@
+<!--
+浮动的定义 相当于叠加了一层
+float 属性定义元素在哪个方向浮动，任何元素都可以浮动 只能左 右 浮动 不能上下  脱离文本流
+元素向左浮动
+脱离文档流之后，元素相当于在页面上面增加一个浮层来放置内容。此时可以理解为有两层页面，一层是底层的原页面，一层是脱离文档流的上层页面，所以会出现折叠现象
+浮动的副作用
+当元素设置float浮动后，该元素就会脱离文档流并向左/向右浮动
+浮动元素会造成父元素高度塌陷
+后续元素会受到影响
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            float: left;
+        }
+
+        .container{
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            float: left;
+        }
+        
+        div{
+            float: left;
+        }
+
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        ul li {
+            float: right;
+            margin-left: 0 px 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="container"></div>
+    <div>
+        <img src="1.jpg" alt="">
+        <img src="1.jpg" alt="">
+    </div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li> <!--我-->
+    </ul>
+</body>
+</html>

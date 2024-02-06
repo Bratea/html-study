@@ -1,0 +1,68 @@
+<!--
+浮动的副作用
+当元素设置float浮动后，该元素就会脱离文档流并向左/向右浮动
+浮动元素会造成父元素高度塌陷
+后续元素会受到影响
+-->
+
+<!--
+清除浮动
+当父元素出现塌陷的时候，对布局是不利的，所以我们必须清除副作用解决方案有很多种
+1.父元素设置高度
+2.受影响的元素增加clear属性   left/right/ both 其中both是通用的
+3.overflow清除浮动 如果有父级塌陷，并且同级元素也收到了影响，可以使用 overflow 与clear 清除浮动这种情况下，父布局不能设置高度父级标签的样式里面加: overflow:hidden; clea:both;一起写 
+注意：但是子元素还是无法清除浮动 仍需要在子元素的属性中添加 clea:both; 用的最多
+4.伪对象方式 属性名字+:: {}  {}里添加 display:blocl; clea:both; 详情在34行  不建议
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 如果大盒子没有高度默认是小盒子的高度 但小盒子横向浮动 导致大盒子的高度为未浮动的盒子高度 导致整体区块变形-->
+<style>
+
+    .container{
+        width: 500px;
+        background-color: #888;
+        display: block;
+        clear: both;
+    }
+    
+    .container::after{
+        content: "";
+        overflow: hidden;
+        clear: both;
+    }
+
+    .box1{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 5px;
+        float: left;
+    }
+    .text1{
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+    }
+    .text{
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        clear: both;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class=" box1"></div>
+        <div class=" box1"></div>
+        <div class=" box1"></div>
+        <div class="text"></div> <!--注意：但是子元素还是无法清除浮动 仍需要在子元素的属性中添加 clea:both;-->
+    </div>
+    <div class="text1"></div> <!--与 container 同级  可以使用 overflow与clear-->
+</body>
+</html>

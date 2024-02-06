@@ -1,0 +1,35 @@
+<!--
+文档流是文档中可显示对象在排列时所占用的位置/空间
+例如:块元素自上而下摆放，内联元素，从左到右摆放标准流里面的限制非常多，导致很多页面效果无法实现
+1.
+高矮不齐，底边对齐
+空白折叠现象
+2.
+无论多少个空格、换行、tab，都会折叠为一个空格如果我们想让img标签之间没有空隙，必须紧密连接
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!--问题1 文本与图片居中对齐-->
+    <span>大家好,我们一起看美女<span>
+    <img src="1.jpg">
+    <!--问题2.空格的折叠-->
+    <p>大家好我是     p标签</p>
+    <!--问题3.元素的有间隙-->
+    <img src="1.jpg" alt="">
+    <img src="1.jpg" alt="">
+    <!--解决：图片无空隙 编码格式有问题-->
+    <img src="1.jpg" alt=""><img src="1.jpg" alt="">
+</body>
+</html>

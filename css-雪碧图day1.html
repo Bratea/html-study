@@ -1,0 +1,38 @@
+<!--
+CSS Sprite也叫CSS精灵图、CSS雪碧图，是一种网页图片应用处理方式。它允许你将一个页面涉及到的所有零
+星图片都包含到一张大图中去
+
+优点
+减少图片的字节
+减少网页的http请求，从而大大的提高页面的性能
+
+原理
+通过background-image引入背景图片
+通过background-position把背景图片移动到自己需要的位置
+-是从左/上
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        span{
+            display: block;
+            width: 45px;
+            height: 70px;
+            background-image: url(1.jpg);
+            border: 1px solid red;
+            background-position: -90px -90px ;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <span class="icon"></span>
+
+</body>
+</html>

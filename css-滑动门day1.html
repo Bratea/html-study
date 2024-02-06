@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- list-style: none; 去除标签
+        text-align: left; 文字居左
+        padding-left: left; 右移
+        box-sizing: border-box; 以防撑大容器
+        text-decoration: none; 去掉下划线
+        <a>标签里有个div 就是后续所弹出的框
+        position: relative; 调整子相对于父的位置
+        border: 1px solid #e0e0e0; solid 是实现
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18); x y 模糊的 颜色( , , ,透明的) 
+        display: none; 不显示
+        把鼠标滑倒时显示 .slide ul li:hover的意思是当鼠标到li标签时 > 下一步的动作可以返回到 slide-list 里的显示
+        .slide ul li:hover > .slide-list{
+            display: block;
+        }
+        
+    -->
+    <style>
+        
+        body{
+            background-color: #eee;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .slide{
+            width: 234px;
+            height: 420px;
+            background-color: gray;
+            padding: 20px 0;
+            margin: 100px;
+            position: relative;
+        }
+
+        .slide ul{
+            list-style: none;
+        }
+
+        .slide ul li {
+            width: 100%;
+            height: 42px;
+            line-height: 42px;
+            padding-left: left;
+            box-sizing: border-box;
+        }
+        
+        .slide ul li a{
+            display: inline-block;
+            text-decoration: none;
+            color: #ffff;
+        }
+        .slide ul li:hover{
+            background-color: #ff6700;
+        }
+
+        .slide-list{
+            width: 992px;
+            height: 460px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 234px;
+            border: 1px solid #e0e0e0;
+            border-left: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+            display: none;
+        }
+
+        .slide ul li:hover > .slide-list{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--滑动门的结构-->
+    <div class="slide">
+        <ul>
+            <li>
+                <a href="#">手机</a>
+                <div class="slide-list"> 小米1</div>
+            </li>
+            <li>
+                <a href="#"> 电视</a>
+                <div class="slide-list">小米2</div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

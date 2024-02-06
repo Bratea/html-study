@@ -1,0 +1,63 @@
+<!--
+用position: '()'   relative 相对定位, labsolute 绝对定位, fixed 固定定位   后添加left/right/top等
+其中，绝对定位和固定定位会脱离文档流设置定位之后: 可以使用四个方向值进行调整位置: left top、right、 bottom 会有压盖现象
+每设置一个绝对定位和国定地位就是一层
+固定地位是随着页面滚动固定在某位置 一般一层就够
+
+温馨提示
+设置定位之后，相对定位和绝对定位他是相对于 具有定位的 父级元素进行位置调整，如果父级元素不存在定位，则继续向上逐级寻找，直到顶层文档 随着父级一起定位
+
+Z-index
+z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面 比较zi-index 的值  
+没有设置的默认由下到上 且设置了的比没设置的大 如有多个没设置还是由上到下
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .div1{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        left: 200px;
+        top: 100px;
+        z-index: 1;
+    }
+
+    .div2{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        left: 200px;
+        top: 100px;
+        z-index: 2;
+    }
+
+    .div3{
+        width: 400px;
+        height: 400px;
+        background-color: green;
+        position:fixed;
+    }
+
+    .div4{
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        position:fixed;
+    }
+</style>
+<body>
+    <div class="div1"></div> <!--相对定位-->
+    <div class="div2"></div> <!--绝对定位-->
+    <div class="div3"></div> <!--g固定定位-->
+    <div class="div4"></div> <!--g固定定位-->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!--
+绘制心形思路
+我们先将心分割为下列三个部分，一个正方形和两个半圆形为了减少DOM元素，我们可以通过 :before 与 :after 两个伪元素
+接下来就简单了，我们需要将“心”进行旋转45度，将”心”放正
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    为了实现图形的整体居中
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+    -->
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 让容器的宽度和高度都充满全屏 */
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background-color: pink;
+            display: flex;
+            flex-direction:  row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heart{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            transform: rotate(45deg); /* 顺时针旋转45°*/
+            animation: heartbit  2s alternate infinite;
+            box-shadow: 0 0 30px red; /* 朦胧效果 阴影*/
+        }
+        /*添加伪元素 添加新图形*/
+        .heart::before{
+            content: '';
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: -99px; /* 温馨提示 让半圆与正方形进行重合，避免元素中间出现细线 只需要减小一个像素*/
+            border-radius: 100px 100px 0 0; /*  花园*/
+            box-shadow: 0 0 30px red;/* 朦胧效果 阴影*/
+        }
+
+        .heart::after{
+            content: '';
+            width: 100px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: -100px;
+            top: 0;
+            border-radius: 100px 0 0 100px;
+            box-shadow: 0 0 30px red;/* 朦胧效果 阴影*/
+        }
+        /* 实现动画 让心跳动起来  scale 缩放*/
+        @keyframes heartbit{
+        0%{
+            transform: rotate(45deg) scale(0.6);
+        }
+        100%{
+            transform: rotate(45deg) scale(1.4);
+        }
+        }
+        p{
+            
+            position: relative;
+            left: -145px;
+            top :210px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class=" heart"></div>
+    <p>表白我的心</p>
+</body>
+</html>

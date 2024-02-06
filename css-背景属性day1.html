@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--div -->
+    <!--type 里面 background-repeat  平铺图片
+    repeat-x 只向水平方向平铺  水平重复 垂直不重复
+    repeat-y 只向垂直方向平铺  垂直重复 水平不重复
+    no-repeat 不平铺
+    -->
+    <!--background-size   图片大小
+    length 第一个参数是宽
+    percentage 第二个是高 不填自动
+    auto 自动
+    cover 保持图片纵横比并将图片缩放成完全覆盖背景区域的最小大小
+    contain 保持图片纵横比并将图像缩放成适合背景定位区域的最大大小
+    -->
+    <!--background-position 图片从哪里开始渲染的位置 显示图片的位置
+    right/left top  右/左上角
+    right/left center 右/左中
+    right/wleft bottomleft  右/左下
+    center top 中上
+    center center  中中
+    center bottom 中下
+    x% y%   第一个值是水平位置，第二个值是垂直位置，左上角是0% 0%，右下角是100% 100%。如果只指定了一个值，其他值默认是50%。默认是0% 0%
+    xpos ypos 单位是像素
+    -->
+    <style>
+        .box1 {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+
+        .box2 {
+            width: 1400px;
+            height: 400px;
+            background-color: black;
+            background-image: url(1.jpg);
+            background-repeat: repeat-y;
+            background-size: 1400px 400px;
+            background-size: auto;
+            background-position:left center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">1</div>
+
+    <div class="box2">1</div>
+</body>
+
+</html>

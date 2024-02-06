@@ -1,0 +1,253 @@
+<!--维持各个浏览器的网页统一性 -->
+<!DOCTYPE html> 
+<html lang="en">
+<!--网址标签类-->
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小陈的网页</title> <!--网页标签的名字-->
+</head>
+<!--网址里面的内容-->
+<body> 
+<!--标签之换行-->
+    这是一个换行啦 <!--不建议直接写 用<p>合适-->
+    <p align=" center">啦啦啦啦</p> <!--<br>相当与\n换行， <p>  text  <p>相当于段落    -->
+    这也是一个换行<br>
+<!--h1~h6标题标签-->
+    <h1 align="left">这是一个大标题</h1> <!--在<h1>空格后的都是属性 align="?"left,right,center-->
+    <h2 align="right">这是一个中标题</h2> <!--也不建议在html里修改标题位置用css更好，css对页面布局更美观-->
+    <h3 align="center">这是一个小标题</h3> 
+    <h4>这是一个小小标题</h4>
+    <h5>这是一个小小小标题</h5>
+    <h6>这是一个小小小小小标题</h6>
+<!--标签之水平线-->
+    <hr color='red' width="10" size="200" align="right"> <!--hr是生成一条线 属性有color width宽度 size 高度 align 空格分离即可-->
+<!--标签之图片-->
+    <img src="1.jpg" alt="美丽的姐姐" width="200" height="200px" title="漂亮姐姐">  <!--标签定义 HTML 页面中的图像<img> 属性 scr 路径,
+                                                                    alt 图片错误输出的文本, width 宽度,height 高度 默认是像素的单位是px
+                                                                    title 鼠标放在图片上显示的信息-->
+    <img src="./images/2.jpg" width="200" height="200px" >  <!--两者相对关系，两者在同一路径下可以直接访问
+                                                                                            子级关系: /
+                                                                                            父级关系:   ../
+                                                                                            同级关系: ./-->
+    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.613eefe4f3dce1539fb869512aaec653?rik=JHqP2a98FW9V6g&riu=http%3a%2f%2fimg.
+        keaitupian.cn%2fuploads%2f2020%2f07%2f27%2fu5fvdxekx3v.jpg&ehk=kXJUsPWsN%2bqEyh%2fG3OBv36Zf9YrLkv2IANMYFhB%2fHUo%3d&risl=&
+        pid=ImgRaw&r=0" width="200" height="200px">         <!-- 网络链接-->
+<!--标签之超文本链接-->
+    <a href=" https://github.com/">Github</a>  <!--超文本链接  herf 里填完整的网页地址，不填为当前网址 '你好'指的是超文本：点 '你好 ' 可以跳转
+                            访问过的链接显示为紫色并带有下划线,点击链接时，链接显示为红色并带有下划线 css可以调整样式-->
+    <a href="https://www.baidu.com/">
+        <img src="./images/2.jpg" width="200" height="200px">
+    </a>                <!--点击图片跳转 图片超链接 鼠标样式变成小手通常是超链接-->
+<!--标签之文本-->
+    <br><em>em:编程</em><br> <!--定义着重文字-->
+    <b>b:编程</b><br><!--定义粗体文本-->
+    <i>i:编程</i><br><!--定义斜体字-->
+    <strong>strong:编程</strong><br><!--定义加重语气-->
+    <del>del:编程</del><br><!--定义删除字-->
+    <span>span:编程</span><!--元素没有特点的含义-->
+<!--文本标签的嵌套-->
+    <p>我喜欢吃<em>白菜</em></p> 
+<!--列表标签之有序列表-->
+    <ol type="A">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>草莓</li>
+        <li>西瓜</li>   <!--- ol ＋li 对文本依次排序 type 排序类型 1-123,a-abc,A-ABC,i-i、ii、iii,I-I、II、III-->
+    </ol>
+<!--列表标签之嵌套有序列表-->
+    <ol type="I">
+        <li>
+            水果
+            <ol type="A">
+            <li> 草莓</li>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>哈密瓜</li>
+            </ol>
+        </li>
+        <li>
+            蔬菜
+            <ol type="a">
+                <li>青菜</li>
+                <li>南瓜</li>
+                <li>冬瓜</li>
+                <li>芥菜</li>
+            </ol>
+        </li>
+        <li>
+            肉类
+            <ol type="i">
+                <li>猪肉</li>
+                <li>牛肉</li>
+                <li>羊肉</li>
+                <li>狗肉</li>
+            </ol>
+        </li>
+    </ol>
+<!--列表标签之无序列表-->
+    <ul type="square">
+        <li> 草莓</li>      <!--- ul ＋li 对文本依次排序 type 排序类型 disc>实心圆, circle>空心圆, square>小方块, name>不显示 css调整居多-->
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>哈密瓜</li>    
+    </ul>
+<!--列表标签之嵌套无序列表-->
+    <ul type="circle">
+        <li>
+            水果
+            <ul type="disc">
+            <li> 草莓</li>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>哈密瓜</li>
+            </ul>
+        </li>
+        <li>
+            蔬菜
+            <ul type="none">
+                <li>青菜</li>
+                <li>南瓜</li>
+                <li>冬瓜</li>
+                <li>芥菜</li>
+            </ul>
+        </li>
+<!-- 排序标签的快捷键    ul>li*3   ol>li*3 回车即可 3可以替换-->
+ul>li*3
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+ol>li*2
+<ol>
+    <li></li>
+    <li></li>
+</ol>
+<!--标签之表格 行<tr> 表格<table> 列 <td> type border 表格的边框， width表格的宽度, height 表格的高度 css调整居多-->
+<table border="1" width="400" heigt="400">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>  
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>  <!-- 3 tr 3 td 三行三列 -->
+</table>
+<!-- 表格标签的快捷键    table>tr*3>td*3{} 回车即可 3可以替换,(文本信息)-->
+table>tr*3>td*3{3}
+<table border="1" width="400" heigt="400">
+    <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+</table>
+<!--表格的合并  olspan: 横向合并单元格 保留左边删除右边; rowspan: 纵向合并单元格 保留上删除下-->
+<table border="1" >
+    <tr>
+        <td>表格1</td>
+        <td>表格2</td>
+        <td>表格3</td>
+    </tr>
+    <tr>
+        <td colspan="2">表格4    表格5</td> <!--横向合并单元格-->
+        <td rowspan="2">表格6<br>表格9</td> <!--纵向合并单元格-->
+    </tr>
+    <tr>
+        <td>表格7</td>
+        <td>表格8</td>
+    </tr>
+</table>
+<!--表单的创建 实现记录输入信息的容器-->
+<!--action服务器地址, name表单名称, method中Get和Post的区别:数据提交方式，get把提交的数据url可以看到，post看不到get一般用于提交少量数据，post用来提交大量数据-->
+<form action="">
+    <input>
+    <input type="submit">  <!--单一的提交按钮-->
+    <button>按钮</button> <!--可以自行更改的按钮名字-->
+</form>
+<!--表单元素-->
+<form action="">
+    用户名：<input type="text"><br>
+    密码：<input type="password"> <!--password 输入时显示小圆点-->
+    <input type="submit" value="登录"> <!--value 里的是更换按钮的文本-->
+</form>
+<!--块元素和行内元素（内联元素) html 5更新的-->
+<!--
+块元素
+块元素会在页面中独占一行(自上向下垂直排列)
+可以设置width，height属性
+般块级元素可以包含行内元素和其他块级元素  
+
+内联元素/行内元素
+行内元素不会独占页面中的一行，只占自身的大小
+行内元素设置width，height属性无效
+般内联元素包含内联元素不包含块级元素
+
+常见块级元素
+div、 form、h1~h6、hr、p、table、ul、ol等
+
+常见内联元素
+a、b、em、ispan、strong等
+
+行内块级元素(特点: 不换行、能够识别宽高)
+button、img、input等
+-->
+<!-- 块元素 独占一行可以改宽高 hegiht width css修改最好-->
+<h1>标题</h1>
+<p>段落</p>
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+</ul>
+
+<!--左右摆放 只占自身大小 不可通过html修改大小 css可以-->
+<a href=""></a>
+<span>内容</span>
+<em>注重语气</em>
+
+<!--HTML5 前的标签 div 容器标签 方便css统一美化-->
+<div id="header">  <!--id注释这个div的名字 -->
+    <ul>
+        <li>导航1</li>
+        <li>导航2</li>  <!--网页最上方导航区-->
+        <li>导航3</li>
+    </ul>
+</div>
+<div id="article">
+    <img src="" alt="">  <!--下面的图片区域-->
+</div>              
+<div id="footer">
+    <img src="" alt=""> <!--文本区域-->
+    <p></p>
+</div>
+
+<!--html5 新标签 需要新浏览器 强大的浏览器 方便解读 统一定义-->
+<header></header> <!--头部-->
+<nav></nav> <!--导航-->
+<article> <!--文章-->
+    <section> </section> <!--定义文章中的节，章节，页眉，页脚-->
+</article>    <!--文章-->
+<aside></aside> <!--侧边栏-->
+<footer></footer> <!--侧边栏-->
+</body>
+
+</html>

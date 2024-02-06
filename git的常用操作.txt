@@ -1,0 +1,69 @@
+
+
+打开cmd
+
+ git config --list 查看语法
+
+配置用户信息
+git config --global user.name XXX 添加用户
+git config --global user.emai1  XXX.COM 添加邮箱
+git config --list 查看是否更改成功
+git config --global user.name "你的新用户名"
+git config --global user.eaml "你的邮箱"   直接填入更改信息不用输入旧名字
+
+初始化本地仓库
+git init  创建仓库 
+右键项目文件打开终端
+执行git init  创建仓库 
+成功创建后会发现文件以及文件夹变成了绿色且文件夹有隐藏文件.git
+
+工作区、暂存区和版本库
+工作区 (Workspace) : 放项目代码的地方，项目代码对应的文件
+暂存区 (Index/Stage) : 也叫索引，是一个文件，保存了下次将提交的文件列表信息 git add xxx文件 把xxx文件放到暂存区里面 
+本地仓库(Repository) : 就是安全存放数据的位置，这里边有你提交的所有版本的数据. git commit -m ''/"  "
+三者的放置位置是一起的 文件后面U是工作区 A是暂存区 没有颜色是本地仓库
+
+查看历史版本
+查看提交记录
+git loggit og --oneline
+
+git远程仓库管理平台
+想要让Gitee帮我们托管静态页面
+需要我们先将本地项目上传到Gitee,
+然后再利用Gitee提供的GiteePages
+进行部署
+
+你要上传的文件的终端（右键打开终端）
+
+先输入
+git config --global user.name 名字
+git config --global user.eaml 邮箱
+测试是否在vscode 是否绑定 
+
+先在gittee或者github里面创建仓库不要加入任何文件 创建成功后会有三段 黑段落图片
+
+第一步
+打开终端 输入 git init
+
+第二步
+在终端输入 git add .\文件名字  放入暂存区
+git commit -m '命名'  放到本地仓库
+
+第三步
+复制 在gitee创建的仓库中筛选第二段的倒数第二句在vscode 你要上传的文件的终端（右键打开终端）执行
+然后再复制 它的下一句也就是最后一句话到终端执行
+
+第四步 如果是很多次跳步骤5
+如果是第一次输入 会有弹出gitee的弹窗（github）未知 让你输入账号密码 账号是你名字下面@开头的 密码是你自己设置的密码
+
+第五步
+点击管理（一般在搜索的下面）
+一点要选择开源且勾选合适的开源许可证 选不选都行 看后续自己的隐私
+
+最后一步
+点管理旁边的服务
+选择第一个 Gitee Pages 服务
+注：任何在公网上上传的网页都要实名
+直接点启动即可
+成功后会跳出网址
+失败可能是言论或者文本

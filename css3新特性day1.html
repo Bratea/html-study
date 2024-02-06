@@ -1,0 +1,42 @@
+<!---
+birder-radius 圆角 100%是圆
+四个值:第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角 
+三个值: 第一个值为左上角,第二个值为右上角和左下角，第三个值为右下角
+两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角
+一个值: 四个圆角值相同
+box-shadow 阴影
+h-shadow  必选，水平阴影的位置
+V-shadow 必选，垂直阴影的位置
+blur 可选，模糊距离
+color 可选，阴影的颜色
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            width: 56px;
+            height: 56px;
+            background-color: purple;
+            border-radius: 20px;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            left: 100px;
+            top: 100px;
+            box-shadow: 0 0 50px grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

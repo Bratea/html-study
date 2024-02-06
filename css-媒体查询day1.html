@@ -1,0 +1,71 @@
+<!--
+媒体查询能使页面在不同在终端设备下达到不同的效果
+媒体查询会根据设备的大小自动识别加载不同的样式
+
+设置meta标签
+使用设备的宽度作为视图宽度并禁止初始的缩放。在<head> 标签里加入这个meta标签
+<meta name="viewport"content="width=device-width， initial-scale=1,maximum-
+scale=1， user-scalable=no">
+
+width = device-width 宽度等于当前设备的宽度
+initialscale 初始的缩放比例 (默认设置为1.0)
+maximum-scale 允许用户缩放到的最大比例 (默认设置为1.0)
+user-scalable 用户是否可以手动缩放 (默认设置为no)
+苹果手机是双倍像素 实际*2
+媒体查询语法
+@media screnn and (   :  ){}
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--默认就有-->
+    <title>Document</title>
+    <!-- 第一个是手机  第二个是pad 第三个是电脑-->
+    <!--display:none 是不显示-->
+    <!--display:block 是显示-->
+    <style>
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        @media screen and (max-width: 768px) {
+            .box{
+                background-color: aqua;
+            }
+            .p1{
+                display: none;
+            }
+        } 
+        @media screen and (min-with: 768px) and (max-width: 996px) {
+            .box{
+                background-color: green;
+            .p1{
+                display: none;
+            }
+            .p2{
+                display: block;
+            }
+            }
+            @media screen and (min-with: 996px) {
+                .box{
+                    background-color: red;
+                }
+                .p1{
+                    display: block;
+                }
+                .p2{
+                    display: block;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p class="p1">哈哈哈哈哈</p>
+    <p class="p2">啦啦啦啦啦</p>
+</body>
+</html>
